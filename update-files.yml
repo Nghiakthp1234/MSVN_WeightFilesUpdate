@@ -16,7 +16,7 @@ jobs:
     - name: Copy new update files to the 'files' directory
       run: |
         mkdir -p files
-        cp ./SimtrayUIL/* ./files/  # Replace with your actual file paths
+        cp ./SimtrayUIL/Config.yaml ./files/  # Replace with your actual file paths
 
     - name: Commit and push changes to GitHub Pages
       uses: EndBug/add-and-commit@v7
