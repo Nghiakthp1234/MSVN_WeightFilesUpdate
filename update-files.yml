@@ -1,0 +1,26 @@
+name: Update Files on GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # This triggers when you push to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Copy new update files to the 'files' directory
+      run: |
+        mkdir -p files
+        cp ./path-to-your-updated-files/* ./files/  # Replace with your actual file paths
+
+    - name: Commit and push changes to GitHub Pages
+      uses: EndBug/add-and-commit@v7
+      with:
+        author_name: 'GitHub Actions'
+        author_email: 'actions@github.com'
+        message: 'Update files'
